@@ -1,15 +1,18 @@
+let listaNumeros = [];
+let numeroLimite = 10;
 let numeroSecreto = numeroAleatorio();
 let tentativas = 0;
 
 function MudarTextoTela(tag, texto) {
   let campo = document.querySelector(tag);
   campo.innerHTML = texto;
+  responsiveVoice.speak(texto, "Brazilian Portuguese Female", { rate: 1.2 });
 }
 function exibirMensagemInicial() {
   MudarTextoTela("h1", "Jogo do número secreto");
   MudarTextoTela("p", "Escolha um número de 1 a 10");
 }
-exibirMensagemInicial()
+exibirMensagemInicial();
 function verificarChute() {
   chute = document.querySelector("input").value;
   tentativas++;
@@ -34,7 +37,20 @@ function verificarChute() {
 }
 
 function numeroAleatorio() {
-  return parseInt(Math.random() * 10 + 1);
+  let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+  let quantidadeNumeroLista = listaNumeros.length;
+
+  if (quantidadeNumeroLista == numeroLimite) {
+    listaNumeros = [];
+  }
+
+  if (listaNumeros.includes(numeroEscolhido)) {
+    return numeroAleatorio();
+  } else {
+    listaNumeros.push(numeroEscolhido);
+    console.log(listaNumeros);
+    return numeroEscolhido;
+  }
 }
 
 function LimparCampo() {
@@ -45,7 +61,7 @@ function LimparCampo() {
 function ReiniciarJogo() {
   numeroSecreto = numeroAleatorio();
   LimparCampo();
-  tentativas = 0
-  exibirMensagemInicial()
-  document.getElementById("reiniciar").setAttribute("disabled", true)
+  tentativas = 0;
+  exibirMensagemInicial();
+  document.getElementById("reiniciar").setAttribute("disabled", true);
 }
