@@ -1,17 +1,26 @@
-const novaTarefa = document.getElementById("novaTarefa");
-const adicionarTarefa = document.getElementById("adicionarTarefa");
-const listaTarefas = document.getElementById("listaTarefa");
+let lista = []
 
-adicionarTarefa.addEventListener("click", function () {
-  const valorTarefa = novaTarefa.value;
-  const itemLista = document.createElement("li");
+function Adicionar() {
+  let valorTarefa = document.getElementById("novaTarefa").value;
+  let listaTarefa = document.getElementById("listaTarefa");
+  let itemLista = document.createElement("li")
 
-  itemLista.textContent = valorTarefa;
-  listaTarefas.appendChild(itemLista);
-});
-
-listaTarefas.addEventListener("click", function (event) {
-  if (event.target.tagName === "LI") {
-    event.target.classList.toggle("concluida");
+  if (lista.includes(valorTarefa) == false) {
+    lista.push(valorTarefa)
+    itemLista.innerText = valorTarefa
+    listaTarefa.appendChild(itemLista)
+  }else {
+    alert("O item já está na lista")
   }
-});
+  
+  console.log(lista)
+
+  
+}
+function Limpar() {
+  let limparLista = document.getElementById("listaTarefa")
+  limparLista.innerHTML = ""
+  lista = []
+  console.log(lista)
+}
+

@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Lista de Tarefas</h1>
-    <input type="text" id="novaTarefa" placeholder="Nova Tarefa" />
-    <button id="adicionarTarefa">Adicionar</button>
-    <ul id="listaTarefa"></ul>
-    <script src="app.js"></script>
+    <main class="container">
+      <h1>Lista de Tarefas</h1>
+      <input type="text" id="novaTarefa" placeholder="Nova Tarefa" />
+      <button onclick="Adicionar()" id="adicionarTarefa" >Adicionar</button>
+      <button onclick="Limpar()" id="limparTarefa">Limpar</button>
+      <ul id="listaTarefa"></ul>
+      <script src="app.js"></script>
+    </main>
   </body>
 </html>
