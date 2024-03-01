@@ -1,32 +1,38 @@
 function calculo() {
-  let nome = document.getElementById("nome").value;
-  let altura = document.getElementById("altura").value;
-  let peso = document.getElementById("peso").value;
-  let resultado = document.getElementById("resultado");
+  const nomeInput = document.getElementById("nome");
+  const alturaInput = document.getElementById("altura");
+  const pesoInput = document.getElementById("peso");
+  const resultado = document.getElementById("resultado");
 
-  if (nome != "" && altura != "" && peso != "") {
-    let valorResultado = peso / (altura * altura).toFixed(1);
-    let classificação = "";
-    if (valorResultado < 18.5) {
-      classificação = "Abaixo do peso";
-    }
-    if (valorResultado >= 18.6 && valorResultado <= 24.9) {
-      classificação = "Peso ideal";
-    }
-    if (valorResultado >= 25 && valorResultado <= 29.9) {
-      classificação = "levemente acima do peso";
-    }
-    if (valorResultado >= 30 && valorResultado <= 34.9) {
-      classificação = "Obesidade grau 1";
-    }
-    if (valorResultado >= 35 && valorResultado <= 39.9) {
-      classificação = "Obesidade grau 2 (Severa)";
-    }
-    if (valorResultado > 40) {
-      classificação = "Obesidade tipo 3 (mórbida)";
-    }
-    resultado.innerHTML = `${nome} seu IMC é ${valorResultado} e você está ${classificação}`;
+  const nome = nomeInput.value;
+  const altura = parseFloat(alturaInput.value);
+  const peso = parseFloat(pesoInput.value);
+
+  if (nome && altura && peso) {
+    const imc = calcularIMC(peso, altura);
+    const classificacao = classificarIMC(imc);
+    resultado.innerHTML = `${nome}, seu IMC é ${imc.toFixed(1)} e você está ${classificacao}`;
   } else {
     resultado.innerHTML = "Preencha todos os campos!";
+  }
+}
+
+function calcularIMC(peso, altura) {
+  return peso / (altura * altura);
+}
+
+function classificarIMC(imc) {
+  if (imc < 18.5) {
+    return "Abaixo do peso";
+  } else if (imc < 25) {
+    return "Peso ideal";
+  } else if (imc < 30) {
+    return "Levemente acima do peso";
+  } else if (imc < 35) {
+    return "Obesidade grau 1";
+  } else if (imc < 40) {
+    return "Obesidade grau 2 (Severa)";
+  } else {
+    return "Obesidade tipo 3 (Mórbida)";
   }
 }
