@@ -20,6 +20,7 @@ async function getWeather(city) {
 function displayWeather(data) {
     const weatherResult = document.getElementById('weatherResult');
     weatherResult.innerHTML = '';
+    console.log(data)
     
     const cityName = document.createElement('h2');
     cityName.textContent = data.name;
