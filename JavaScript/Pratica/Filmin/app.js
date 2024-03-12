@@ -6,7 +6,7 @@ async function buscarFilme() {
 
   try {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=7c667d40&t=${nameMovie}&s=${nameMovie}`
+      `https://www.omdbapi.com/?apikey=7c667d40&t=${nameMovie}&s=${nameMovie}`
     );
 
     if (!response.ok) {
