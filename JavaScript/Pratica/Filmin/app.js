@@ -1,6 +1,7 @@
 async function buscarFilme() {
   const nameMovie = document.getElementById("valorfilme").value;
   const infos = document.getElementById("infos");
+  const valorSelect = document.getElementById("selectGenre").value
 
   infos.innerHTML = ""
 
@@ -12,8 +13,9 @@ async function buscarFilme() {
     if (!response.ok) {
       throw new Error("Erro ao carregar dados!");
     }
-
     const data = await response.json();
+
+    
     for (let i = 0; i < data.Search.length; i++) {
       const movieInfo = document.createElement("div");
       movieInfo.classList.add("movie-info");
@@ -30,9 +32,9 @@ async function buscarFilme() {
       movieInfo.appendChild(imagemFilme);
       movieInfo.appendChild(tituloFilme);
       movieInfo.appendChild(anoFilme);
-
       infos.appendChild(movieInfo);
     }
+    
   } catch (error) {
     console.error("Ocorreu um erro", error);
   }
