@@ -1,41 +1,46 @@
 async function buscarFilme() {
   const nameMovie = document.getElementById("valorfilme").value;
   const infos = document.getElementById("infos");
-  const valorSelect = document.getElementById("selectGenre").value
+  const valueSelect = document.getElementById("selectGenre").value;
 
-  infos.innerHTML = ""
+  infos.innerHTML = "";
+  if (nameMovie === "" || valueSelect === "select the genre") {
+    alert("Por favor, preencha todos os campos!");
+  } else {
+    try {
+      const url = `https://www.omdbapi.com/?apikey=7c667d40&t=${nameMovie}&s=${nameMovie}&type=${valueSelect}`;
+      const response = await fetch(url);
 
-  try {
-    const response = await fetch(
-      `https://www.omdbapi.com/?apikey=7c667d40&t=${nameMovie}&s=${nameMovie}`
-    );
+      if (!response.ok) {
+        throw new Error("Erro ao carregar dados!");
+      }
+      const data = await response.json();
 
-    if (!response.ok) {
-      throw new Error("Erro ao carregar dados!");
+      if (!data.Search || data.Search.length === 0) {
+        alert("Nenhum resultado encontrado!");
+      }
+
+      for (const filme of data.Search) {
+        const movieInfo = document.createElement("div");
+        movieInfo.classList.add("movie-info");
+
+        const imagemFilme = document.createElement("img");
+        imagemFilme.src =
+          filme.Poster != "N/A" ? filme.Poster : "./image/noimage.jpg";
+
+        const tituloFilme = document.createElement("h1");
+        tituloFilme.innerText = filme.Title;
+
+        const anoFilme = document.createElement("p");
+        anoFilme.innerText = filme.Year;
+
+        movieInfo.appendChild(imagemFilme);
+        movieInfo.appendChild(tituloFilme);
+        movieInfo.appendChild(anoFilme);
+        infos.appendChild(movieInfo);
+      }
+    } catch (error) {
+      console.error("Ocorreu um erro", error);
     }
-    const data = await response.json();
-
-    
-    for (let i = 0; i < data.Search.length; i++) {
-      const movieInfo = document.createElement("div");
-      movieInfo.classList.add("movie-info");
-
-      const tituloFilme = document.createElement("h1");
-      const anoFilme = document.createElement("p");
-      const imagemFilme = document.createElement("img");
-      const primeiroFilme = data.Search[i];
-
-      tituloFilme.innerText = primeiroFilme.Title;
-      anoFilme.innerText = primeiroFilme.Year;
-      imagemFilme.src = primeiroFilme.Poster;
-
-      movieInfo.appendChild(imagemFilme);
-      movieInfo.appendChild(tituloFilme);
-      movieInfo.appendChild(anoFilme);
-      infos.appendChild(movieInfo);
-    }
-    
-  } catch (error) {
-    console.error("Ocorreu um erro", error);
   }
 }
