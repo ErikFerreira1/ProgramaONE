@@ -3,72 +3,96 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to right bottom, #1b242d, #1b1e26, #19181e, #151217, #0f0b0e, #24161c, #502726, #87442e, #b66c2b, #d79e1a, #e3d703);
-  background-size: cover;
-  height: 100vh;
-
+  background-color: #1b242d;
+  background-image: url(assets/back1.jpg);
 }
 .mainDiv {
+  background-color: #02020296;
+  height: 100vh;
   display: flex;
   justify-content: center;
 }
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #0000003b;
-  width: 1500px;
+  background-color: rgba(0, 0, 0, 0.753); /* Cor de fundo com transparência */
+  width: 500px;
   justify-items: center;
-  height: 953px;
-  margin-top: 15vh;
+  height: 580px;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid #e3d703;
 }
-.loginImageLeft {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logoTop {
+  width: 500px;
 }
-.loginImageLeft > img {
-  width: 800px;
-  height: 950px;
-  border-radius: 0px 50px 50px 0px;
-}
-
 .logoTop > h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: #e3d703;
   text-align: center;
 }
 .loginImageTop {
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
+  padding-top: 35px;
 }
 .loginImageTop > h2 {
-  font-size: 45px;
+  font-size: 32px;
+  width: 400px;
   text-align: center;
   color: #fff;
+  border-bottom: 1px solid;
+  margin: auto;
 }
 .loginInterface {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 400px;
+  padding-top: 25px;
   margin: auto;
 }
 #email,
 #senha {
-  height: 50px;
+  height: 40px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   color: black;
 }
 #entrar {
   width: 400px;
-  height: 60px;
+  height: 47px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
   font-weight: bold;
-  color: black;
+  color: rgb(0, 0, 0);
   background-color: #e3d703;
+}
+.loginGoogle {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.loginGoogle > span {
+  padding-top: 15px;
+}
+.loginGoogle > span > hr {
+  width: 400px;
+  color: #fff;
+}
+.loginGoogle > h2 {
+  position: absolute;
+  top: 60.6vh;
+  left: 49vw;
+  background-color: rgba(0, 0, 0, 0.849);
+  color: white;
+}
+.loginGoogle > h3 {
+  width: 400px;
+  padding-left: 45px;
+  color: #fff;
+}
+.loginGoogle > h3 > span > a {
+  text-decoration: none;
+  color: #e3d703;
 }
