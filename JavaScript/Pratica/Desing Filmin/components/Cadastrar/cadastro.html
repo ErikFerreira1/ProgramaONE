@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="cadastro.css" />
   </head>
   <body>
     <div class="mainDiv">
@@ -13,9 +13,15 @@
           <h1><a href="../../index.html">MOVFLX</a></h1>
 
           <div class="loginImageTop">
-            <h2>BEM-VINDO</h2>
+            <h2>CADASTRAR</h2>
             <div>
-              <form class="loginInterface" action="Login" method="get">
+              <form class="CadastroInterface" action="Cadastro" method="get">
+                <input
+                  type="text"
+                  name="usuario"
+                  id="usuario"
+                  placeholder="Nome de usuário"
+                />
                 <input
                   type="email"
                   name="email"
@@ -28,13 +34,13 @@
                   id="senha"
                   placeholder="Senha"
                 />
-                <input type="submit" value="Entrar" id="entrar" />
+                <input type="submit" value="Cadastrar" id="entrar" />
               </form>
-            </div>
-            <div class="loginGoogle">
-              <span><hr /></span>
-              <h2>OU</h2>
-              <h3>NÃO FAZ PARTE AINDA? <span><a href="../Cadastrar/cadastro.html">CADASTRE-SE</a></span></h3>
+              <div class="loginGoogle">
+                <span><hr /></span>
+                <h2>OU</h2>
+                <h3>JÁ POSSUI CONTA? <span><a href="../Login/login.html">ENTRE</a></span></h3>
+              </div>
             </div>
           </div>
         </div>

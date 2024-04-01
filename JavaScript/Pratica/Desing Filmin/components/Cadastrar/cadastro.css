@@ -38,7 +38,7 @@ main {
 .loginImageTop {
   display: flex;
   flex-direction: column;
-  padding-top: 35px;
+  padding-top: 25px;
 }
 .loginImageTop > h2 {
   font-size: 32px;
@@ -48,7 +48,7 @@ main {
   border-bottom: 1px solid;
   margin: auto;
 }
-.loginInterface {
+.CadastroInterface {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -57,7 +57,7 @@ main {
   margin: auto;
 }
 #email,
-#senha {
+#senha, #usuario {
   height: 40px;
   border-radius: 10px;
   font-size: 20px;
@@ -89,7 +89,7 @@ main {
 }
 .loginGoogle > h2 {
   position: absolute;
-  top: 60.6vh;
+  top: 66.8vh;
   left: 49vw;
   background-color: rgba(0, 0, 0, 0.849);
   color: white;
@@ -103,3 +103,4 @@ main {
   text-decoration: none;
   color: #e3d703;
 }
+
