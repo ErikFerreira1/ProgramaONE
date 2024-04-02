@@ -78,6 +78,8 @@ main {
 .loginGoogle {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-left: 10px;
 }
 .loginGoogle > span {
@@ -89,14 +91,13 @@ main {
 }
 .loginGoogle > h2 {
   position: absolute;
-  top: 60.6vh;
-  left: 49vw;
+  margin-bottom: 70px;
   background-color: rgba(0, 0, 0, 0.849);
   color: white;
 }
 .loginGoogle > h3 {
   width: 400px;
-  padding-left: 45px;
+  padding-left: 10px;
   color: #fff;
 }
 .loginGoogle > h3 > span > a {

@@ -79,11 +79,15 @@ nav {
 .navRight {
   display: flex;
 }
+main {
+  height: 100vh;
+}
 .mainBannerIntro {
   padding: 295px 0 370px;
   background-image: url(assets/banner_bg01.jpg);
   background-position: center;
   background-size: cover;
+  width: 99vw;
 }
 .titleMainBanner {
   display: flex;
@@ -118,7 +122,6 @@ nav {
 .articleContainer {
   display: flex;
   justify-content: center;
-
   gap: 40px;
 }
 
@@ -152,4 +155,67 @@ nav {
 .articleInfoMovie > div > h5 {
   font-size: 15px;
   padding-left: 35px;
+}
+.mainArticle {
+  background-color: #100f17;
+  padding: 50px;
+}
+footer {
+  background-image: url(assets/footer_bg.jpg);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 6vh 20vw;
+}
+.footerLinks {
+  display: flex;
+}
+.footerNav {
+  display: flex;
+  gap: 10px;
+}
+.footerNav > li {
+  list-style-type: none;
+}
+.footerNav > li > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+.footerSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 0vh 20vw;
+}
+.footerInfo {
+  display: flex;
+  gap: 10px;
+  margin-left: -30px;
+  margin-bottom: 50px;
+}
+.footerInfo > li {
+  list-style-type: none;
+}
+.footerInfo > li > a {
+  text-decoration: none;
+  font-weight: normal;
+  color: white;
+  font-size: 13px;
+}
+.socialMedia {
+  display: flex;
+  gap: 10px;
+}
+.socialMedia > li {
+  list-style-type: none;
+}
+.socialMedia > li > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 13px;
 }
