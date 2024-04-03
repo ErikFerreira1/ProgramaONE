@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background-color: #1b242d;
+  background-color: #0f1017;
 }
 nav {
   position: absolute;
@@ -15,7 +15,7 @@ nav {
   font-weight: bold;
 
   background-color: transparent;
-  width: 96vw;
+  width: 95vw;
 }
 .navLogo {
   display: flex;
@@ -83,86 +83,51 @@ main {
   height: 100vh;
 }
 .mainBannerIntro {
-  padding: 295px 0 370px;
-  background-image: url(assets/banner_bg01.jpg);
+  padding: 295px 0 380px;
+  background-image: url(../../assets/banner_bg03.png);
   background-position: center;
   background-size: cover;
+  
   width: 99vw;
 }
 .titleMainBanner {
   display: flex;
-  flex-direction: column;
-
-  padding: 50px;
+  justify-content: center;
+  align-items: center;
 }
 .titleMainBanner > h2 {
-  font-size: 26px;
-  color: #e4d804;
+  font-size: 50px;
+  color: #fff;
   margin: 0px;
 }
-.titleMainBanner > h3 {
-  font-size: 45px;
+.mainAbout {
+  background-image: url(../../assets/contact_bg.jpg);
+  background-position: top center;
+  background-size: cover;
+  height: 70%;
+  padding: 120px 0px;
+}
+.mainAboutTitle {
+  margin: auto;
+  
+  width: 1000px;
+}
+.mainAboutTitle > h1 {
   text-transform: uppercase;
-  color: #fff;
-  margin: 0px;
-}
-.titleMainBanner > h3 > span {
-  color: #e4d804;
-}
-.titleMainBanner > h4 {
-  font-size: 30px;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0px;
-}
-.articleMain {
-  background-color: #16161c;
-  padding: 50px;
-}
-.articleContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.articleTitle > h2 {
-  font-size: 30px;
-  color: #fff;
   font-weight: bold;
-  text-transform: uppercase;
-}
-.articleTitle > h2 > span {
-  color: #e4d804;
-}
-.articleContainerMovie {
-  display: flex;
-  flex-direction: column;
-  width: 303px;
-}
-.articleContainerMovie > img {
-  border-radius: 6px;
-}
-.articleInfoMovie {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
   color: #fff;
+  border-bottom: 2px solid #e3d703;
+  
 }
-.articleInfoMovie > div > h4 {
-  padding-left: 55px;
-  color: #e3d703;
-}
-.articleInfoMovie > div > h5 {
-  font-size: 15px;
-  padding-left: 35px;
-}
-.mainArticle {
-  background-color: #100f17;
-  padding: 50px;
+.mainAboutInfos > h2 {
+  
+  text-align: justify;
+  margin:auto;
+  color: #fff;
+  width: 1000px;
 }
 footer {
-  background-image: url(assets/footer_bg.jpg);
+  background-image: url(../../assets/footer_bg.jpg);
   
 }
 
@@ -193,7 +158,7 @@ footer {
   transition: 0.7s;
 }
 .footerSection {
-  background-image: url(assets/footer_bg.jpg);
+  background-image: url(../../assets/footer_bg.jpg);
   display: flex;
   justify-content: space-between;
   padding: 0vh 20vw;
