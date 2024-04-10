@@ -30,16 +30,16 @@
             ×
           </span>
           <div class="overlay-content">
-            <form  action="/action_page.php">
-              <input class="overlay-content-btn" type="text" placeholder="Search.." name="search" />
-              <button type="submit">
+            <form  action="components/Search/search.html">
+              <input class="overlay-content-btn" type="text" placeholder="Search.." id="formSearch" name="search" />
+              <button onclick="search()" type="submit">
                 <i class="fa fa-search"></i>
               </button>
             </form>
           </div>
         </div>
         <div class="navSearch">
-          <img onclick="openSearch()" src="assets/lupa.png" alt="pesquisa" />
+          <img onclick="openSearch()" src="assets/lupa.png" alt="pesquisa" /> 
         </div>
         <div class="navLogin">
           <button type="button">
