@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #0f1017;
+  overflow-x: hidden
 }
 nav {
   display: flex;
@@ -81,13 +82,15 @@ nav {
 main {
   margin-top: 50px;
   height: 100vh;
+  width: 98vw;
+
 
 }
 .titleSearch {
   text-transform: uppercase;
   color: #fff;
   border-bottom: 1px solid #e3d703;
-  width: 800px;
+  width:100vw;
 }
 .titleSearch > h1 {
   padding-left: 10px;
@@ -95,6 +98,7 @@ main {
 .articleContainerMovie {
   display: flex;
   flex-direction: column;
+  
   width: 303px;
   padding: 20px ;
 }
@@ -114,4 +118,12 @@ main {
 .articleInfoMovie > div > h5 {
   font-size: 15px;
   padding-left: 35px;
+}
+#infos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  gap: 40px;
+  
 }
