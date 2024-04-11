@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="search.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
     <script src="search.js"></script>
   </head>
   <body>
@@ -19,10 +23,27 @@
           <li><a href="../Contact/contact.html">CONTACT</a></li>
         </ul>
       </div>
+
       <div class="navRight">
+        <div id="myOverlay" class="overlay">
+          <span class="closebtn" onclick="closeSearch()" title="Close Overlay">
+            ×
+          </span>
+          <div class="overlay-content">
+            <form id="searchForm" action="search.html" method="get">
+              <input class="overlay-content-btn" type="text" placeholder="Search.." id="searchInput" name="search" />
+              <button type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="navSearch">
+          <img onclick="openSearch()" src="../../assets/lupa.png" alt="pesquisa" /> 
+        </div>
         <div class="navLogin">
           <button type="button">
-            <a href="../Login/login.html">LOGIN</a>
+            <a href="components/Login/login.html">LOGIN</a>
           </button>
         </div>
       </div>

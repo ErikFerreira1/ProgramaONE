@@ -85,7 +85,7 @@ nav {
   color: white;
 }
 .overlay-content-btn:focus {
-  outline: none; /* Remove o contorno de foco */
+  outline: none;
 }
 .overlay .closebtn {
   position: absolute;
