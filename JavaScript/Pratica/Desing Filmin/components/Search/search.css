@@ -162,7 +162,7 @@ main {
 .articleContainerMovie {
   display: flex;
   flex-direction: column;
-
+  
   width: 303px;
   padding: 20px;
 }
@@ -174,14 +174,31 @@ main {
   justify-content: space-between;
   width: 300px;
   color: #fff;
+  align-items: baseline;
 }
+.articleInfoMovie > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.articleInfoMovie > div > h1 {
+  font-size: 17px;
+}
+.articleInfoMovie > div > h1 > img {
+  width: 15px;
+  height: 15px;
+  padding-right: 5px;
+}
+
 .articleInfoMovie > div > h4 {
   padding-left: 55px;
   color: #e3d703;
 }
 .articleInfoMovie > div > h5 {
   font-size: 15px;
-  padding-left: 35px;
+  margin: 0px;
+  float: right;
 }
 #infos {
   display: flex;
@@ -189,4 +206,84 @@ main {
   flex-wrap: wrap;
 
   gap: 40px;
+}
+footer {
+  background-image: url(../../assets/footer_bg.jpg);
+  
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  padding: 6vh 20vw;
+}
+.footerLinks {
+  display: flex;
+}
+.footerNav {
+  display: flex;
+  gap: 10px;
+}
+.footerNav > li {
+  list-style-type: none;
+}
+.footerNav > li > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #bcbcbc;
+}
+.footerNav > li > a:hover {
+  color: #e3d703;
+  transition: 0.7s;
+}
+.footerSection {
+  background-image: url(../../assets/footer_bg.jpg);
+  display: flex;
+  justify-content: space-between;
+  padding: 0vh 20vw;
+}
+.footerInfo {
+  display: flex;
+  gap: 10px;
+  margin-left: -30px;
+  margin-bottom: 50px;
+}
+.footerInfo > li {
+  list-style-type: none;
+}
+.footerInfo > li > a {
+  text-decoration: none;
+  font-weight: normal;
+  color: #bcbcbc;
+  font-size: 13px;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 10px;
+}
+.socialMedia > li {
+  list-style-type: none;
+}
+.socialMedia > li > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #bcbcbc;
+  font-size: 13px;
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #171b22;
+  font-size: 13px;
+  color: #bcbcbc;
+  line-height: 24px;
+}
+.copy > h3 > a {
+  text-decoration: none;
+  color: #e4d804;
 }

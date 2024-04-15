@@ -2,11 +2,9 @@ function openSearch() {
   document.getElementById("myOverlay").style.display = "block";
 }
 
-
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
-
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -73,21 +71,23 @@ document.addEventListener("DOMContentLoaded", function () {
         titleContainer.appendChild(title);
 
         const ratingContainer = document.createElement("div");
-        const rating = document.createElement("h3");
-        rating.innerText = parseFloat(movieData.vote_average).toFixed(2);
-        ratingContainer.appendChild(rating);
+        const rating = document.createElement("h1");
+        
+  
+        const starImage = document.createElement("img");
+        starImage.src = "../../assets/estrela.png";
+        starImage.alt = "Estrela"; 
+        rating.appendChild(starImage);
+        rating.appendChild(document.createTextNode(parseFloat(movieData.vote_average).toFixed(2)));
 
         const detailsContainer = document.createElement("div");
 
         const year = document.createElement("h4");
         year.innerText = movieData.release_date.substring(0, 4);
 
-        const duration = document.createElement("h5");
-        duration.innerText = `${movieData.runtime} min`;
-
         detailsContainer.appendChild(year);
-        detailsContainer.appendChild(duration);
-
+        
+        titleContainer.appendChild(rating)
         titleContainer.appendChild(ratingContainer);
         articleInfoMovie.appendChild(titleContainer);
         articleInfoMovie.appendChild(detailsContainer);

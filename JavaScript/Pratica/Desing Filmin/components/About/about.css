@@ -16,7 +16,7 @@ nav {
   font-weight: bold;
 
   background-color: transparent;
-  width: 95vw;
+  width: 96vw;
 }
 .navLogo {
   display: flex;
@@ -56,6 +56,71 @@ nav {
 }
 .navSearch > img {
   width: 30px;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 50%;
+  width: 50%;
+  text-align: center;
+
+  margin-top: 30px;
+  margin: auto;
+}
+.overlay-content-btn {
+  color: white;
+}
+.overlay-content-btn:focus {
+  outline: none;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 50px;
+  cursor: pointer;
+  font-weight: lighter;
+
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #e3d703;
+}
+
+.overlay input[type="text"] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid #e3d703;
+  float: left;
+  width: 80%;
+  background: transparent;
+}
+
+.overlay button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  color: #e3d703;
+  border: none;
+
+  font-size: 17px;
+  cursor: pointer;
+}
+.overlay-content button i {
+  font-size: 30px;
 }
 .navLogin {
   display: flex;
@@ -129,7 +194,6 @@ main {
 }
 footer {
   background-image: url(../../assets/footer_bg.jpg);
-  
 }
 
 .footer {
