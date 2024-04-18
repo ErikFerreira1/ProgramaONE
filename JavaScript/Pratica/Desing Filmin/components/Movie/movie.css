@@ -150,69 +150,8 @@ main {
   height: 100vh;
   width: 98vw;
 }
-.titleSearch {
-  text-transform: uppercase;
-  color: #fff;
-  border-bottom: 1px solid #e3d703;
-  width: 100vw;
-}
-.titleSearch > h1 {
-  padding-left: 10px;
-}
-.articleContainerMovie {
-  display: flex;
-  flex-direction: column;
-  
-  width: 303px;
-  padding: 20px;
-}
-.articleContainerMovie img {
-  width: 303px;
-  height: 454.5px;
-  
-  border-radius: 6px;
-}
-.articleInfoMovie {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  color: #fff;
-  align-items: baseline;
-}
-.articleInfoMovie > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-.articleInfoMovie > div > h1 {
-  font-size: 17px;
-}
-.articleInfoMovie > div > h1 > img {
-  width: 15px;
-  height: 15px;
-  padding-right: 5px;
-}
-
-.articleInfoMovie > div > h4 {
-  padding-left: 55px;
-  color: #e3d703;
-}
-.articleInfoMovie > div > h5 {
-  font-size: 15px;
-  margin: 0px;
-  float: right;
-}
-#infos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  gap: 40px;
-}
 footer {
   background-image: url(../../assets/footer_bg.jpg);
-  
 }
 
 .footer {

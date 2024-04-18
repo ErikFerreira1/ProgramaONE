@@ -56,11 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const articleContainerMovie = document.createElement("div");
         articleContainerMovie.classList.add("articleContainerMovie");
 
+        const linkImgMovie = document.createElement("a");
+        linkImgMovie.onclick = function() {
+          sessionStorage.setItem('movieTitle', movieData.title);
+          window.location.href = "../Movie/movie.html";
+      };
+
         const imagemFilme = document.createElement("img");
         imagemFilme.src = movieData.poster_path
           ? `https://image.tmdb.org/t/p/w500/${movieData.poster_path}`
           : "../../assets/noimage.jpg";
         imagemFilme.alt = "posterMovie";
+        linkImgMovie.appendChild(imagemFilme);
 
         const articleInfoMovie = document.createElement("div");
         articleInfoMovie.classList.add("articleInfoMovie");
@@ -72,13 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const ratingContainer = document.createElement("div");
         const rating = document.createElement("h1");
-        
-  
+
         const starImage = document.createElement("img");
         starImage.src = "../../assets/estrela.png";
-        starImage.alt = "Estrela"; 
+        starImage.alt = "Estrela";
         rating.appendChild(starImage);
-        rating.appendChild(document.createTextNode(parseFloat(movieData.vote_average).toFixed(2)));
+        rating.appendChild(
+          document.createTextNode(parseFloat(movieData.vote_average).toFixed(2))
+        );
 
         const detailsContainer = document.createElement("div");
 
@@ -86,13 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
         year.innerText = movieData.release_date.substring(0, 4);
 
         detailsContainer.appendChild(year);
-        
-        titleContainer.appendChild(rating)
+
+        titleContainer.appendChild(rating);
         titleContainer.appendChild(ratingContainer);
         articleInfoMovie.appendChild(titleContainer);
         articleInfoMovie.appendChild(detailsContainer);
 
-        articleContainerMovie.appendChild(imagemFilme);
+        articleContainerMovie.appendChild(linkImgMovie);
         articleContainerMovie.appendChild(articleInfoMovie);
 
         articleContainer.appendChild(articleContainerMovie);
