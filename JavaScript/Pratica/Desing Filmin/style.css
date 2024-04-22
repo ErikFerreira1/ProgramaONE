@@ -206,9 +206,9 @@ main {
 .articleContainerMovie {
   display: flex;
   flex-direction: column;
-  width: 303px;
 }
-.articleContainerMovie > img {
+.articleContainerMovie > a > img {
+  width: 303px;
   border-radius: 6px;
 }
 .articleInfoMovie {

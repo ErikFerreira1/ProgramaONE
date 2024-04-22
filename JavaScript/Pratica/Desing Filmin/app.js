@@ -23,20 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = await response.json();
 
     return data.results;
+    
   }
 
   async function displayMovies(containerId, movies) {
     const container = document.getElementById(containerId);
 
     container.innerHTML = "";
-
+    
     for (const movie of movies) {
       const articleContainerMovie = document.createElement("div");
       articleContainerMovie.classList.add("articleContainerMovie");
 
+      const linkImgMovie = document.createElement("a");
+      linkImgMovie.onclick = function () {
+        sessionStorage.setItem('movieID', movie.id);
+        window.location.href = "components/Movie/movie.html";
+      };
+
       const imagemFilme = document.createElement("img");
       imagemFilme.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       imagemFilme.alt = "posterMovie";
+      linkImgMovie.appendChild(imagemFilme)
 
       const articleInfoMovie = document.createElement("div");
       articleInfoMovie.classList.add("articleInfoMovie");
@@ -70,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       articleInfoMovie.appendChild(titleContainer);
       articleInfoMovie.appendChild(detailsContainer);
 
-      articleContainerMovie.appendChild(imagemFilme);
+      articleContainerMovie.appendChild(linkImgMovie);
       articleContainerMovie.appendChild(articleInfoMovie);
 
       container.appendChild(articleContainerMovie);

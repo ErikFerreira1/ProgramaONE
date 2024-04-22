@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const movieData = await movieResponse.json();
-
+        console.log(movieData);
         const articleContainer = document.createElement("div");
         articleContainer.classList.add("articleContainer");
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const linkImgMovie = document.createElement("a");
         linkImgMovie.onclick = function() {
-          sessionStorage.setItem('movieTitle', movieData.title);
+          sessionStorage.setItem('movieID', movieData.id);
           window.location.href = "../Movie/movie.html";
       };
 
