@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
         articleContainerMovie.classList.add("articleContainerMovie");
 
         const linkImgMovie = document.createElement("a");
-        linkImgMovie.onclick = function() {
-          sessionStorage.setItem('movieID', movieData.id);
+        linkImgMovie.onclick = function () {
+          sessionStorage.setItem("movieID", movieData.id);
           window.location.href = "../Movie/movie.html";
-      };
+        };
 
         const imagemFilme = document.createElement("img");
         imagemFilme.src = movieData.poster_path

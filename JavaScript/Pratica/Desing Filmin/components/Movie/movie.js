@@ -1,11 +1,9 @@
 function openSearch() {
   document.getElementById("myOverlay").style.display = "block";
-  
 }
 
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
-
 }
 document.addEventListener("DOMContentLoaded", async function () {
   const movieID = sessionStorage.getItem("movieID");
@@ -28,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const posterMovie = document.querySelector(".posterMovie");
       const poster = this.createElement("img");
-    
+
       poster.src = searchData.poster_path
         ? `https://image.tmdb.org/t/p/w500/${searchData.poster_path}`
         : "../../assets/noimage.jpg";
