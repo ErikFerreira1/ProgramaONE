@@ -47,6 +47,19 @@ document.addEventListener("DOMContentLoaded", async function () {
       } else {
         genrer.innerText = "Gênero não disponível";
       }
+      
+      const rating = document.getElementById("rating")
+      const imgStar = document.createElement("img")
+      imgStar.src = "../../assets/estrela.png"
+      
+      rating.appendChild(imgStar);
+      rating.appendChild(document.createTextNode(" "));
+      rating.appendChild(
+        document.createTextNode(parseFloat(searchData.vote_average).toFixed(2))
+      );
+
+      const time = document.getElementById("time")
+      time.innerText = searchData.runtime + " " + " MIN"
 
       const release = document.getElementById("release");
       if (searchData.release_date) {

@@ -177,7 +177,7 @@ main {
 }
 .titleMovie {
   margin-top: 100px;
-  width: 600px;
+  width: 31.5vw;
   text-align: justify;
   position: relative;
 
@@ -187,11 +187,23 @@ main {
   text-transform: uppercase;
 }
 .infosMovie {
-  display: flex;
-  gap: 5px;
   border-top: 1px solid #e3d703;
   font-size: 18px;
 }
 #genrer {
   text-transform: uppercase;
+}
+#infosMovie-child {
+  display: flex;
+  
+  gap: 10px;
+
+}
+#infosMovie-child img {
+  padding-left: 5px;
+  width: 15px;
+  height: 15px;
+}
+#infosMovie-child > h1 {
+  font-size: 18px;
 }
