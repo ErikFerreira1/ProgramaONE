@@ -4,11 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+const cors = require("cors")
 const app = express();
 
 app.use(express.json());
-
+app.use(cors())
 const User = require("./models/User");
 
 app.get("/", (req, res) => {
@@ -35,14 +35,12 @@ function checkToken(req, res, next) {
     return res.status(401).json({ msg: "Acesso negado" });
   }
   try {
-
     const secret = process.env.SECRET;
 
     jwt.verify(token, secret);
 
-    next()
+    next();
   } catch (error) {
-
     res.status(400).json({ msg: "Token inválido!" });
   }
 }
@@ -117,6 +115,7 @@ app.post("/auth/login", async (req, res) => {
         id: user._id,
       },
       secret
+      
     );
 
     res.status(200).json({ msg: "Autenticação realizada com sucesso", token });
