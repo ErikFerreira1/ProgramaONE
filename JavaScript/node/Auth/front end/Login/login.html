@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="login.css" />
+    <script src="login.js"></script>
   </head>
   <body>
     <div class="mainDiv">
@@ -15,17 +16,22 @@
           <div class="loginImageTop">
             <h2>BEM-VINDO</h2>
             <div>
-              <form class="loginInterface" action="Login" method="get">
+              <form
+                class="loginInterface"
+                id="loginForm"
+                action="http://127.0.0.1:3000/auth/login"
+                method="post"
+              >
                 <input
                   type="email"
                   name="email"
-                  id="email"
+                  id="loginEmail"
                   placeholder="Email"
                 />
                 <input
                   type="password"
-                  name="senha"
-                  id="senha"
+                  name="password"
+                  id="loginPassword"
                   placeholder="Senha"
                 />
                 <input type="submit" value="Entrar" id="entrar" />

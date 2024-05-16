@@ -5,6 +5,24 @@ function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
 document.addEventListener("DOMContentLoaded", function () {
+  function checkAuth() {
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
+    const loginButton = document.getElementById("loginButton");
+    const usernameDisplay = document.getElementById("usernameDisplay");
+
+    if (token && username) {
+      loginButton.style.display = "none";
+      usernameDisplay.innerText = "Olá, " + username;
+      usernameDisplay.style.display = "block";
+    } else {
+      loginButton.style.display = "block";
+      usernameDisplay.style.display = "none";
+    }
+  }
+
+  checkAuth();
+
   async function fetchTopRatedMovies() {
     const apiKey = "f7618a55c1d648cc00383ed3b123cffe";
     const topRatedUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=pt-BR&page=1`;

@@ -4,19 +4,18 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #0f1017;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 nav {
-  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 30px;
-
   font-weight: bold;
-
   background-color: transparent;
-  width: 96vw;
+  width: 97.5vw;
+  position: relative;
+  z-index: 1;
 }
 .navLogo {
   display: flex;
@@ -82,7 +81,7 @@ nav {
   color: white;
 }
 .overlay-content-btn:focus {
-  outline: none;
+  outline: none; /* Remove o contorno de foco */
 }
 .overlay .closebtn {
   position: absolute;
@@ -122,6 +121,7 @@ nav {
 .overlay-content button i {
   font-size: 30px;
 }
+
 .navLogin {
   display: flex;
   justify-content: center;
@@ -131,12 +131,16 @@ nav {
   width: 100px;
   height: 50px;
 
-  background-color: #12151e;
+  background-color: transparent;
   border: 2px solid #e4d804;
   border-radius: 50px;
 
   font-size: 17px;
   font-weight: bold;
+}
+.navLogin > button:hover {
+  transition: 0.5s;
+  background-color: #0f1017;
 }
 .navLogin > button > a {
   color: white;
@@ -145,129 +149,66 @@ nav {
 .navRight {
   display: flex;
 }
+#usernameDisplay {
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+}
 main {
-  height: 100vh;
+  height: 98vh;
+  display: flex;
+
 }
 .mainBannerIntro {
-  padding: 295px 0 380px;
-  background-image: url(../../assets/banner_bg03.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 295px 0 800px;
   background-position: center;
   background-size: cover;
-  
-  width: 99vw;
+  width: 100vw;
+  opacity: 0.6;
+
+  mask-image: linear-gradient(to top, transparent 10%, black 100%);
 }
-.titleMainBanner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.posterMovie > img {
+  position: relative;
+
+  margin: 100px 50px 0px 50px;
+  border-radius: 5px;
+
+  width: 300px;
+  height: 450px;
 }
-.titleMainBanner > h2 {
-  font-size: 50px;
-  color: #fff;
-  margin: 0px;
-}
-.mainAbout {
-  background-image: url(../../assets/contact_bg.jpg);
-  background-position: top center;
-  background-size: cover;
-  height: 70%;
-  padding: 120px 0px;
-}
-.mainAboutTitle {
-  margin: auto;
-  
-  width: 1000px;
-}
-.mainAboutTitle > h1 {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-  border-bottom: 2px solid #e3d703;
-  
-}
-.mainAboutInfos > h2 {
-  
+.titleMovie {
+  margin-top: 100px;
+  width: 31.5vw;
   text-align: justify;
-  margin:auto;
-  color: #fff;
-  width: 1000px;
-}
-footer {
-  background-image: url(../../assets/footer_bg.jpg);
-}
+  position: relative;
 
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 40px;
-  padding: 6vh 20vw;
+  color: white;
 }
-.footerLinks {
-  display: flex;
+.titleMovie > h1 {
+  text-transform: uppercase;
 }
-.footerNav {
+.infosMovie {
+  border-top: 1px solid #e3d703;
+  font-size: 18px;
+}
+#genrer {
+  text-transform: uppercase;
+}
+#infosMovie-child {
   display: flex;
+  
   gap: 10px;
-}
-.footerNav > li {
-  list-style-type: none;
-}
-.footerNav > li > a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #bcbcbc;
-}
-.footerNav > li > a:hover {
-  color: #e3d703;
-  transition: 0.7s;
-}
-.footerSection {
-  background-image: url(../../assets/footer_bg.jpg);
-  display: flex;
-  justify-content: space-between;
-  padding: 0vh 20vw;
-}
-.footerInfo {
-  display: flex;
-  gap: 10px;
-  margin-left: -30px;
-  margin-bottom: 50px;
-}
-.footerInfo > li {
-  list-style-type: none;
-}
-.footerInfo > li > a {
-  text-decoration: none;
-  font-weight: normal;
-  color: #bcbcbc;
-  font-size: 13px;
-}
 
-.socialMedia {
-  display: flex;
-  gap: 10px;
 }
-.socialMedia > li {
-  list-style-type: none;
+#infosMovie-child img {
+  padding-left: 5px;
+  width: 15px;
+  height: 15px;
 }
-.socialMedia > li > a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #bcbcbc;
-  font-size: 13px;
-}
-.copy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  background-color: #171b22;
-  font-size: 13px;
-  color: #bcbcbc;
-  line-height: 24px;
-}
-.copy > h3 > a {
-  text-decoration: none;
-  color: #e4d804;
+#infosMovie-child > h1 {
+  font-size: 18px;
 }

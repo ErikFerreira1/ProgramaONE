@@ -145,6 +145,11 @@ nav {
 .navRight {
   display: flex;
 }
+#usernameDisplay {
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+}
 main {
   height: 100vh;
 }
@@ -166,108 +171,30 @@ main {
   color: #fff;
   margin: 0px;
 }
-.mainContact {
+.mainAbout {
   background-image: url(../../assets/contact_bg.jpg);
   background-position: top center;
   background-size: cover;
   height: 70%;
   padding: 120px 0px;
 }
-.mainContactTitle {
+.mainAboutTitle {
   margin: auto;
-  width: 50vw;
+
+  width: 1000px;
 }
-.mainContactTitle > h1 {
+.mainAboutTitle > h1 {
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
   border-bottom: 2px solid #e3d703;
 }
-.mainContactForm {
+.mainAboutInfos > h2 {
+  text-align: justify;
   margin: auto;
-  width: 35vw;
-  padding: 30px 30px 40px;
-  border: 1px solid #232226;
+  color: #fff;
+  width: 1000px;
 }
-.mainContactForm > form > input {
-  text-align: start;
-  font-size: 15px;
-}
-#nomeId {
-  width: 12vw;
-  border: 1px solid #1f1e24;
-  background: #1f1e24;
-  border-radius: 4px;
-  color: #bcbcbc;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.46);
-  font-weight: 500;
-  padding: 14px 25px;
-  margin-bottom: 30px;
-  transition: 0.3s linear;
-  margin-right: 1vw;
-  
-}
-#emailContact {
-  width: 12vw;
-  border: 1px solid #1f1e24;
-  background: #1f1e24;
-  border-radius: 4px;
-  color: #bcbcbc;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.46);
-  font-weight: 500;
-  padding: 14px 25px;
-  margin-bottom: 30px;
-  transition: 0.3s linear;
-}
-#subjactContact {
-  width: 28vw;
-  border: 1px solid #1f1e24;
-  background: #1f1e24;
-  border-radius: 4px;
-  color: #bcbcbc;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.46);
-  font-weight: 500;
-  padding: 14px 25px;
-  margin-bottom: 30px;
-  transition: 0.3s linear;
-}
-#menssage {
-  width: 28vw;
-  height: 10vh;
-  border: 1px solid #1f1e24;
-  background: #1f1e24;
-  border-radius: 4px;
-  color: #bcbcbc;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.46);
-  font-weight: 500;
-  padding: 14px 25px;
-  margin-bottom: 30px;
-  transition: 0.3s linear;
-}
-#submitContactForm {
-    user-select: none;
-    -moz-user-select: none;
-    background: #12151e none repeat scroll 0 0;
-    border: 2px solid #e4d804;
-    border-radius: 50px;
-    color: #e3dfdf;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    margin-bottom: 0;
-    padding: 16px 34px;
-    text-align: center;
-    text-transform: uppercase;
-    touch-action: manipulation;
-    transition: all 0.3s ease 0s;
-    vertical-align: middle;
-    white-space: nowrap;
-    max-width: 200px;
-}
-
 footer {
   background-image: url(../../assets/footer_bg.jpg);
 }

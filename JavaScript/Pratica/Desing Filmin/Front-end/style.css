@@ -147,6 +147,11 @@ nav {
 .navRight {
   display: flex;
 }
+#usernameDisplay {
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+}
 main {
   height: 100vh;
 }
