@@ -110,7 +110,7 @@ nav {
   background: transparent;
 }
 
-.overlay button {
+.overlay  button {
   width: 50px;
   height: 50px;
   background: transparent;
@@ -129,7 +129,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.navLogin > button {
+#loginButton  {
   width: 100px;
   height: 50px;
 
@@ -151,6 +151,16 @@ nav {
   color: white;
   text-transform: uppercase;
   font-size: 18px;
+}
+#idlogoutButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#idlogoutButton > img {
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
 }
 main {
   height: 100vh;

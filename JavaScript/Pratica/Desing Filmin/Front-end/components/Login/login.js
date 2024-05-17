@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
-
+    if (localStorage.getItem("token")) {
+      window.location.href = "../../index.html";
+    }
     loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const username = localStorage.getItem("username");
     const loginButton = document.getElementById("loginButton");
     const usernameDisplay = document.getElementById("usernameDisplay");
+    const logout = document.getElementById("idlogoutButton");
 
     if (token && username) {
       loginButton.style.display = "none";
@@ -18,11 +19,22 @@ document.addEventListener("DOMContentLoaded", async function () {
       usernameDisplay.style.display = "block";
     } else {
       loginButton.style.display = "block";
+      logout.style.display = "none";
       usernameDisplay.style.display = "none";
     }
   }
 
   checkAuth();
+
+  document
+  .getElementById("idlogoutButton")
+  .addEventListener("click", function () {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+
+    window.location.href = "../../index.html";
+  });
+  
 
   
   const movieID = sessionStorage.getItem("movieID");
@@ -39,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
 
       const searchData = await searchResponse.json();
-      console.log(searchData);
+    
       const banner = document.getElementById("mainBannerIntro");
       banner.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${searchData.backdrop_path}')`;
 

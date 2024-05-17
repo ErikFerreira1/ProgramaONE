@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const username = localStorage.getItem("username");
       const loginButton = document.getElementById("loginButton");
       const usernameDisplay = document.getElementById("usernameDisplay");
+      const logout = document.getElementById("idlogoutButton");
   
       if (token && username) {
         loginButton.style.display = "none";
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         usernameDisplay.style.display = "block";
       } else {
         loginButton.style.display = "block";
+        logout.style.display = "none";
         usernameDisplay.style.display = "none";
       }
     }
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const movieData = await movieResponse.json();
-        console.log(movieData);
+     
         const articleContainer = document.createElement("div");
         articleContainer.classList.add("articleContainer");
 
@@ -132,6 +134,14 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Ocorreu um erro", error);
     }
   }
+    document
+    .getElementById("idlogoutButton")
+    .addEventListener("click", function () {
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+
+      window.location.href = "../../index.html";
+    });
 
   search();
 });

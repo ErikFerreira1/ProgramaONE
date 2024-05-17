@@ -150,6 +150,18 @@ nav {
   text-transform: uppercase;
   font-size: 18px;
 }
+#idlogoutButton {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+#idlogoutButton > img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding-left: 3px;
+}
 main {
   height: 100vh;
 }
@@ -210,7 +222,6 @@ main {
   margin-bottom: 30px;
   transition: 0.3s linear;
   margin-right: 1vw;
-  
 }
 #emailContact {
   width: 12vw;
@@ -250,27 +261,27 @@ main {
   transition: 0.3s linear;
 }
 #submitContactForm {
-    user-select: none;
-    -moz-user-select: none;
-    background: #12151e none repeat scroll 0 0;
-    border: 2px solid #e4d804;
-    border-radius: 50px;
-    color: #e3dfdf;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    margin-bottom: 0;
-    padding: 16px 34px;
-    text-align: center;
-    text-transform: uppercase;
-    touch-action: manipulation;
-    transition: all 0.3s ease 0s;
-    vertical-align: middle;
-    white-space: nowrap;
-    max-width: 200px;
+  user-select: none;
+  -moz-user-select: none;
+  background: #12151e none repeat scroll 0 0;
+  border: 2px solid #e4d804;
+  border-radius: 50px;
+  color: #e3dfdf;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding: 16px 34px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transition: all 0.3s ease 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+  max-width: 200px;
 }
 
 footer {

@@ -4,11 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const cors = require("cors")
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 const User = require("./models/User");
 
 app.get("/", (req, res) => {
@@ -113,13 +113,18 @@ app.post("/auth/login", async (req, res) => {
     const token = jwt.sign(
       {
         id: user._id,
-        username: user.name
+        username: user.name,
       },
       secret
-      
     );
 
-    res.status(200).json({ msg: "Autenticação realizada com sucesso", token, username:user.name });
+    res
+      .status(200)
+      .json({
+        msg: "Autenticação realizada com sucesso",
+        token,
+        username: user.name,
+      });
   } catch (error) {
     console.log(error);
     res.status(500).json({ msg: "Aconteceu um erro no servidor!" });
