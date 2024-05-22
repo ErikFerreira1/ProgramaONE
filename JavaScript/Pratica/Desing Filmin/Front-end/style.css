@@ -110,7 +110,7 @@ nav {
   background: transparent;
 }
 
-.overlay  button {
+.overlay button {
   width: 50px;
   height: 50px;
   background: transparent;
@@ -129,7 +129,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-#loginButton  {
+#loginButton {
   width: 100px;
   height: 50px;
 
@@ -166,7 +166,7 @@ main {
   height: 100vh;
 }
 .mainBannerIntro {
-  padding: 295px 0 370px;
+  padding: 27.31vh 0 46vh;
   background-image: url(assets/banner_bg01.jpg);
   background-position: center;
   background-size: cover;
@@ -327,4 +327,26 @@ footer {
 .copy > h3 > a {
   text-decoration: none;
   color: #e4d804;
+}
+@media only screen and (max-width: 1145px) {
+  .navLinks {
+    gap: 12vw;
+  }
+  .navLogin {
+    padding-right: 15px;
+  }
+
+  .titleMainBanner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .titleMainBanner > h4 {
+    font-size: 25px;
+  }
+  .titleMainBanner > h3 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 860px) {
+
 }
