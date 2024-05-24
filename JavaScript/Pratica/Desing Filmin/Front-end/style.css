@@ -5,6 +5,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #1b242d;
   overflow-x: hidden;
+  width: 100%;
 }
 nav {
   position: absolute;
@@ -256,15 +257,19 @@ footer {
 .footer {
   display: flex;
   flex-direction: row;
+  
   justify-content: space-between;
   height: 40px;
   padding: 6vh 20vw;
 }
 .footerLinks {
   display: flex;
+
+  
 }
 .footerNav {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .footerNav > li {
@@ -287,6 +292,7 @@ footer {
 }
 .footerInfo {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-left: -30px;
   margin-bottom: 50px;
@@ -303,6 +309,7 @@ footer {
 
 .socialMedia {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .socialMedia > li {
@@ -318,6 +325,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   height: 60px;
   background-color: #171b22;
   font-size: 13px;
@@ -328,7 +336,14 @@ footer {
   text-decoration: none;
   color: #e4d804;
 }
+@media screen {
+  .hamburger {
+    display: none;
+
+  }
+}
 @media only screen and (max-width: 1145px) {
+
   .navLinks {
     gap: 12vw;
   }
@@ -347,6 +362,29 @@ footer {
     font-size: 35px;
   }
 }
-@media only screen and (max-width: 860px) {
 
+@media only screen and (max-width: 860px) {
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+  }
+  .navLogin {
+    padding-right: 35px;
+  }
+  .navLinks.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
 }
