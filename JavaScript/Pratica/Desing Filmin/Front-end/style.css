@@ -4,8 +4,6 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #1b242d;
-  overflow-x: hidden;
-  width: 100%;
 }
 nav {
   position: absolute;
@@ -17,7 +15,10 @@ nav {
   font-weight: bold;
 
   background-color: transparent;
-  width: 96vw;
+
+  width: 100%;
+  max-width: 96vw;
+  box-sizing: border-box;
 }
 .navLogo {
   display: flex;
@@ -171,7 +172,6 @@ main {
   background-image: url(assets/banner_bg01.jpg);
   background-position: center;
   background-size: cover;
-  width: 99vw;
 }
 .titleMainBanner {
   display: flex;
@@ -257,15 +257,13 @@ footer {
 .footer {
   display: flex;
   flex-direction: row;
-  
-  justify-content: space-between;
+
+  justify-content: space-around;
   height: 40px;
   padding: 6vh 20vw;
 }
 .footerLinks {
   display: flex;
-
-  
 }
 .footerNav {
   display: flex;
@@ -287,8 +285,9 @@ footer {
 .footerSection {
   background-image: url(assets/footer_bg.jpg);
   display: flex;
-  justify-content: space-between;
-  padding: 0vh 20vw;
+  justify-content: center;
+
+  padding: 2vh 20vw;
 }
 .footerInfo {
   display: flex;
@@ -326,6 +325,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   height: 60px;
   background-color: #171b22;
   font-size: 13px;
@@ -339,11 +339,9 @@ footer {
 @media screen {
   .hamburger {
     display: none;
-
   }
 }
 @media only screen and (max-width: 1145px) {
-
   .navLinks {
     gap: 12vw;
   }
@@ -364,6 +362,9 @@ footer {
 }
 
 @media only screen and (max-width: 860px) {
+  .footerLogo {
+    display: none;
+  }
   .navLinks {
     display: none;
     flex-direction: column;
@@ -375,16 +376,22 @@ footer {
     left: 0;
     padding: 20px 0;
   }
-  .navLogin {
-    padding-right: 35px;
-  }
+
   .navLinks.active {
     display: flex;
+
+    background-color: #16161c59;
   }
+
   .hamburger {
     display: block;
     font-size: 30px;
     color: white;
     cursor: pointer;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .navLogo > a > img {
+    display: none;
   }
 }

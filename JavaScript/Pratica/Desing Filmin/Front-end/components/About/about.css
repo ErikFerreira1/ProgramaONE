@@ -3,8 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background-color: #0f1017;
-  overflow-x: hidden;
+  background-color: #1b242d;
 }
 nav {
   position: absolute;
@@ -16,7 +15,10 @@ nav {
   font-weight: bold;
 
   background-color: transparent;
-  width: 96vw;
+
+  width: 100%;
+  max-width: 96vw;
+  box-sizing: border-box;
 }
 .navLogo {
   display: flex;
@@ -57,6 +59,7 @@ nav {
 .navSearch > img {
   width: 30px;
 }
+
 .overlay {
   height: 100%;
   width: 100%;
@@ -122,12 +125,13 @@ nav {
 .overlay-content button i {
   font-size: 30px;
 }
+
 .navLogin {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.navLogin > button {
+#loginButton {
   width: 100px;
   height: 50px;
 
@@ -153,25 +157,20 @@ nav {
 #idlogoutButton {
   background-color: transparent;
   border: none;
-  width: 30px;
-  height: 30px;
+  cursor: pointer;
 }
 #idlogoutButton > img {
   width: 30px;
   height: 30px;
-  cursor: pointer;
-  padding-left: 3px;
-}
-main {
-  height: 100vh;
+  padding-left: 5px;
 }
 .mainBannerIntro {
-  padding: 295px 0 380px;
+  padding: 42.4vh 0 46vh;
   background-image: url(../../assets/banner_bg03.png);
   background-position: center;
   background-size: cover;
 
-  width: 99vw;
+  
 }
 .titleMainBanner {
   display: flex;
@@ -188,24 +187,44 @@ main {
   background-position: top center;
   background-size: cover;
   height: 70%;
-  padding: 120px 0px;
+  padding: 150px 0px;
 }
 .mainAboutTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
-
-  width: 1000px;
 }
+
 .mainAboutTitle > h1 {
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
+  width: 100%;
+  max-width: 1000px; 
   border-bottom: 2px solid #e3d703;
+  box-sizing: border-box; 
 }
+
+.mainAboutInfos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px; 
+  margin: auto;
+}
+
 .mainAboutInfos > h2 {
   text-align: justify;
-  margin: auto;
   color: #fff;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px; 
+  box-sizing: border-box; 
 }
 footer {
   background-image: url(../../assets/footer_bg.jpg);
@@ -214,7 +233,8 @@ footer {
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
+  justify-content: space-around;
   height: 40px;
   padding: 6vh 20vw;
 }
@@ -223,6 +243,7 @@ footer {
 }
 .footerNav {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .footerNav > li {
@@ -240,11 +261,13 @@ footer {
 .footerSection {
   background-image: url(../../assets/footer_bg.jpg);
   display: flex;
-  justify-content: space-between;
-  padding: 0vh 20vw;
+  justify-content: center;
+
+  padding: 2vh 20vw;
 }
 .footerInfo {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-left: -30px;
   margin-bottom: 50px;
@@ -261,6 +284,7 @@ footer {
 
 .socialMedia {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .socialMedia > li {
@@ -276,6 +300,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
   height: 60px;
   background-color: #171b22;
   font-size: 13px;
@@ -285,4 +311,71 @@ footer {
 .copy > h3 > a {
   text-decoration: none;
   color: #e4d804;
+}
+@media screen {
+  .hamburger {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1145px) {
+  .navLinks {
+    gap: 12vw;
+  }
+  .navLogin {
+    padding-right: 15px;
+  }
+
+  .titleMainBanner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .titleMainBanner > h4 {
+    font-size: 25px;
+  }
+  .titleMainBanner > h3 {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .footerLogo {
+    display: none;
+  }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .navLinks.active {
+    display: flex;
+
+    background-color: #16161c59;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .navLogo > a > img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .mainAboutTitle > h1, .mainAboutInfos > h2 {
+    width: 90%; 
+  }
+  .mainAboutInfos {
+    width: 90%;
+  }
 }

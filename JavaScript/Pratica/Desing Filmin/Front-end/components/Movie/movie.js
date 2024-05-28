@@ -5,6 +5,10 @@ function openSearch() {
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
+function toggleMenu() {
+  const navLinks = document.querySelector('.navLinks');
+  navLinks.classList.toggle('active');
+}
 document.addEventListener("DOMContentLoaded", async function () {
   function checkAuth() {
     const token = localStorage.getItem("token");

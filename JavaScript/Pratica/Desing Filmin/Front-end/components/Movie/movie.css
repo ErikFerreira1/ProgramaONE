@@ -4,18 +4,19 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #0f1017;
-  overflow: hidden;
+  
 }
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
   font-weight: bold;
   background-color: transparent;
-  width: 97.5vw;
+ 
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 .navLogo {
   display: flex;
@@ -177,7 +178,7 @@ main {
   padding: 295px 0 800px;
   background-position: center;
   background-size: cover;
-  width: 100vw;
+  width: 99vw;
   opacity: 0.6;
 
   mask-image: linear-gradient(to top, transparent 10%, black 100%);
@@ -221,4 +222,109 @@ main {
 }
 #infosMovie-child > h1 {
   font-size: 18px;
+}
+@media screen {
+  .hamburger {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .mainBannerIntro {
+    width: 98.8vw;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .mainBannerIntro {
+    width: 98.5vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .mainBannerIntro {
+    width: 98vw;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .mainBannerIntro {
+    width: 97.8vw;
+  }
+  .posterMovie > img{
+    display: none;
+  }
+  .titleMovie {
+
+    padding: 120px;
+    margin: auto;
+    height: 100vh;
+    width: 50vw;
+    
+  }
+}
+@media only screen and (max-width: 1145px) {
+  .navLinks {
+    gap: 12vw;
+  }
+  .navLogin {
+    padding-right: 15px;
+  }
+
+  .titleMainBanner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .titleMainBanner > h4 {
+    font-size: 25px;
+  }
+  .titleMainBanner > h3 {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .footerLogo {
+    display: none;
+  }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .navLinks.active {
+    display: flex;
+
+    background-color: #16161c59;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .mainBannerIntro {
+    width: 96.4vw;
+  }
+  .posterMovie > img{
+    display: none;
+  }
+  .titleMovie {
+
+    padding: 120px;
+    margin: auto;
+    height: 100vh;
+    width: 50vw;
+    
+  }
+  
+}
+@media only screen and (max-width: 390px) {
+  .navLogo > a > img {
+    display: none;
+  }
 }
