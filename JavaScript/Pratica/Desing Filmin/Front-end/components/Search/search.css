@@ -4,7 +4,6 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #0f1017;
-  
 }
 nav {
   display: flex;
@@ -52,9 +51,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 .navSearch > img {
+  cursor: pointer;
   width: 30px;
 }
 .overlay {
@@ -132,7 +131,7 @@ nav {
   width: 100px;
   height: 50px;
 
-  background-color: #12151e;
+  background-color: transparent;
   border: 2px solid #e4d804;
   border-radius: 50px;
 
@@ -187,7 +186,7 @@ main {
 .articleContainerMovie img {
   width: 303px;
   height: 454.5px;
-
+  cursor: pointer;
   border-radius: 6px;
 }
 .articleInfoMovie {
@@ -282,6 +281,10 @@ main {
     font-size: 30px;
     color: white;
     cursor: pointer;
+  }
+  .navLinks.active {
+    display: flex;
+    background-color: #16161c59;
   }
 }
 @media only screen and (max-width: 390px) {

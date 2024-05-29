@@ -54,10 +54,11 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  
 }
 .navSearch > img {
   width: 30px;
+  cursor: pointer;
 }
 
 .overlay {
@@ -135,7 +136,7 @@ nav {
   width: 100px;
   height: 50px;
 
-  background-color: #12151e;
+  background-color: transparent;
   border: 2px solid #e4d804;
   border-radius: 50px;
 
@@ -169,8 +170,6 @@ nav {
   background-image: url(../../assets/banner_bg03.png);
   background-position: center;
   background-size: cover;
-
-  
 }
 .titleMainBanner {
   display: flex;
@@ -205,9 +204,9 @@ nav {
   font-weight: bold;
   color: #fff;
   width: 100%;
-  max-width: 1000px; 
+  max-width: 1000px;
   border-bottom: 2px solid #e3d703;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .mainAboutInfos {
@@ -215,7 +214,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -223,8 +222,8 @@ nav {
   text-align: justify;
   color: #fff;
   width: 100%;
-  max-width: 1000px; 
-  box-sizing: border-box; 
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 footer {
   background-image: url(../../assets/footer_bg.jpg);
@@ -365,6 +364,10 @@ footer {
     color: white;
     cursor: pointer;
   }
+  .navLinks.active {
+    display: flex;
+    background-color: #16161c59;
+  }
 }
 @media only screen and (max-width: 390px) {
   .navLogo > a > img {
@@ -372,8 +375,9 @@ footer {
   }
 }
 @media only screen and (max-width: 1000px) {
-  .mainAboutTitle > h1, .mainAboutInfos > h2 {
-    width: 90%; 
+  .mainAboutTitle > h1,
+  .mainAboutInfos > h2 {
+    width: 90%;
   }
   .mainAboutInfos {
     width: 90%;

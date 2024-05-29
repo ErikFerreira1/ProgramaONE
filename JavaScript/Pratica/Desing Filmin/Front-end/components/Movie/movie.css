@@ -4,7 +4,6 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   background-color: #0f1017;
-  
 }
 nav {
   display: flex;
@@ -13,7 +12,7 @@ nav {
   padding: 20px;
   font-weight: bold;
   background-color: transparent;
- 
+
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -52,10 +51,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 .navSearch > img {
   width: 30px;
+  cursor: pointer;
 }
 .overlay {
   height: 100%;
@@ -247,16 +246,14 @@ main {
   .mainBannerIntro {
     width: 97.8vw;
   }
-  .posterMovie > img{
+  .posterMovie > img {
     display: none;
   }
   .titleMovie {
-
     padding: 120px;
     margin: auto;
     height: 100vh;
     width: 50vw;
-    
   }
 }
 @media only screen and (max-width: 1145px) {
@@ -310,18 +307,19 @@ main {
   .mainBannerIntro {
     width: 96.4vw;
   }
-  .posterMovie > img{
+  .posterMovie > img {
     display: none;
   }
   .titleMovie {
-
     padding: 120px;
     margin: auto;
     height: 100vh;
     width: 50vw;
-    
   }
-  
+  .navLinks.active {
+    display: flex;
+    background-color: #16161c59;
+  }
 }
 @media only screen and (max-width: 390px) {
   .navLogo > a > img {
