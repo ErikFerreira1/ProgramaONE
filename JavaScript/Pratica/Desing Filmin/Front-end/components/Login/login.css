@@ -13,7 +13,10 @@ body {
   justify-content: center;
 }
 main {
-  background-color: rgba(0, 0, 0, 0.753); /* Cor de fundo com transparência */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.753);
   width: 500px;
   justify-items: center;
   height: 580px;
@@ -103,4 +106,52 @@ main {
 .loginGoogle > h3 > span > a {
   text-decoration: none;
   color: #e3d703;
+}
+@media only screen and (max-width: 530px) {
+  main {
+    width: 400px;
+  }
+  .loginImageTop > h2 {
+    width: 350px;
+  }
+  .loginInterface {
+    width: 340px;
+  }
+  #entrar {
+    width: 340px;
+  }
+  .loginGoogle > span > hr {
+    width: 350px;
+  }
+  .loginGoogle > h2 {
+    margin-bottom: 98px;
+  }
+  .loginGoogle > h3 {
+    padding-left: 0px;
+    width: 334px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  main {
+    width: 350px;
+  }
+  .loginImageTop > h2 {
+    width: 320px;
+  }
+  .loginInterface {
+    width: 300px;
+  }
+  #entrar {
+    width: 300px;
+  }
+  .loginGoogle > span > hr {
+    width: 320px;
+  }
+  .loginGoogle > h2 {
+    margin-bottom: 97px;
+  }
+  .loginGoogle > h3 {
+    width: 330px;
+    margin-left: 20px;
+  }
 }

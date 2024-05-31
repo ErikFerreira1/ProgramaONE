@@ -177,7 +177,7 @@ main {
   padding: 295px 0 800px;
   background-position: center;
   background-size: cover;
-  width: 99vw;
+  width: 98.9vw;
   opacity: 0.6;
 
   mask-image: linear-gradient(to top, transparent 10%, black 100%);
@@ -229,7 +229,7 @@ main {
 }
 @media only screen and (max-width: 1500px) {
   .mainBannerIntro {
-    width: 98.8vw;
+    width: 98.5vw;
   }
 }
 @media only screen and (max-width: 1250px) {
@@ -250,7 +250,7 @@ main {
     display: none;
   }
   .titleMovie {
-    padding: 120px;
+    padding: 0px;
     margin: auto;
     height: 100vh;
     width: 50vw;
@@ -305,13 +305,13 @@ main {
     cursor: pointer;
   }
   .mainBannerIntro {
-    width: 96.4vw;
+    width: 97.8vw;
   }
   .posterMovie > img {
     display: none;
   }
   .titleMovie {
-    padding: 120px;
+    padding: 0px;
     margin: auto;
     height: 100vh;
     width: 50vw;
@@ -319,6 +319,29 @@ main {
   .navLinks.active {
     display: flex;
     background-color: #16161c59;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .mainBannerIntro {
+    width: 97.3vw;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .mainBannerIntro {
+    width: 96.8vw;
+  }
+}
+@media only screen and (max-width: 516px) {
+  .mainBannerIntro {
+    width: 96vw;
+  }
+}
+@media only screen and (max-width: 478px) {
+  .titleMovie {
+    padding: 0px;
+  }
+  .mainBannerIntro {
+    width: 94.8vw;
   }
 }
 @media only screen and (max-width: 390px) {
