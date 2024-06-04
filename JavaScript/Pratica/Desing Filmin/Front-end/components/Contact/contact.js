@@ -9,7 +9,8 @@ function closeSearch() {
 document.addEventListener("DOMContentLoaded", function () {
   const apiKey = "f7618a55c1d648cc00383ed3b123cffe";
   const genreSelect = document.getElementById("genre");
-  const form = document.getElementById("searchForm");
+  const mainForm = document.getElementById("mainSearchForm");
+  const navForm = document.getElementById("navSearchForm");
   const resultsDiv = document.getElementById("results");
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
@@ -41,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (releaseYear) {
       const currentYear = new Date().getFullYear();
-
       url += `&primary_release_date.gte=${releaseYear}-01-01&primary_release_date.lte=${currentYear}-12-31`;
     }
 
@@ -92,11 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
                   <img src="${imageBaseUrl + movie.poster_path}" alt="${
           movie.title
         } poster">
-                  <div>
-                      <h2>${movie.title}</h2>
-                      <p>Nota: ${movie.vote_average}</p>
-                      <p>Ano: ${new Date(movie.release_date).getFullYear()}</p>
-                      <p>Duração: ${movie.runtime} minutos</p>
+                  <div class="articleInfoMovie">
+                      <div class="articleContainerMovie">
+                        <div class="articleInfoMovie">
+                          <div>
+                            <h3>${movie.title}</h3>
+                            <h3 class="score"> ${movie.vote_average}</h3>
+                          </div>
+                          <div>
+                            <p class="year"> ${new Date(movie.release_date).getFullYear()}</p>
+                            <p class="duration"> ${movie.runtime} min</p>
+                          </div>
+                        </div>
+                      </div>
+                      
                   </div>
               `;
         resultsDiv.appendChild(movieElement);
@@ -105,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   getGenres();
-  form.addEventListener("submit", searchMovies);
+  mainForm.addEventListener("submit", searchMovies);
 
   function checkAuth() {
     const token = localStorage.getItem("token");
