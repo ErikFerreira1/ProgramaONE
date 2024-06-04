@@ -10,15 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const apiKey = "f7618a55c1d648cc00383ed3b123cffe";
   const genreSelect = document.getElementById("genre");
   const mainForm = document.getElementById("mainSearchForm");
-  const navForm = document.getElementById("navSearchForm");
+  const highRatingButton = document.getElementById("highRating");
   const resultsDiv = document.getElementById("results");
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+  let sortByRating = false;
 
   async function getGenres() {
     try {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=pt-BR`
-      );
+      const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=pt-BR`);
       const data = await response.json();
       const genres = data.genres;
       genres.forEach((genre) => {
@@ -36,13 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     const genre = genreSelect.value;
     const minDuration = 60;
+    const minRating = 7;
     const releaseYear = document.getElementById("releaseYear").value;
+    const startYear = document.getElementById("startYear").value;
+    const endYear = document.getElementById("endYear").value;
 
-    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=pt-BR&with_genres=${genre}&sort_by=popularity.desc`;
+    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=pt-BR&with_genres=${genre}&with_runtime.gte=${minDuration}`;
 
-    if (releaseYear) {
-      const currentYear = new Date().getFullYear();
-      url += `&primary_release_date.gte=${releaseYear}-01-01&primary_release_date.lte=${currentYear}-12-31`;
+   
+    if (startYear && endYear) {
+      url += `&primary_release_date.gte=${startYear}-01-01&primary_release_date.lte=${endYear}-12-31`;
+    } else if (releaseYear) {
+      url += `&primary_release_year=${releaseYear}`;
+    }
+
+    if (sortByRating) {
+      url += `&vote_average.gte=${minRating}`;
     }
 
     try {
@@ -57,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const filteredMovies = moviesWithDetails.filter(
         (movie) => movie.runtime >= minDuration
       );
-
       const sortedMovies = filteredMovies.sort(
         (a, b) => b.vote_average - a.vote_average
       );
@@ -88,30 +95,45 @@ document.addEventListener("DOMContentLoaded", function () {
       movies.forEach((movie) => {
         const movieElement = document.createElement("div");
         movieElement.classList.add("movie");
+        const posterPath = movie.poster_path ? imageBaseUrl + movie.poster_path : "../../assets/noimage.jpg";
         movieElement.innerHTML = `
-                  <img src="${imageBaseUrl + movie.poster_path}" alt="${
-          movie.title
-        } poster">
-                  <div class="articleInfoMovie">
-                      <div class="articleContainerMovie">
-                        <div class="articleInfoMovie">
-                          <div>
-                            <h3>${movie.title}</h3>
-                            <h3 class="score"> ${movie.vote_average}</h3>
-                          </div>
-                          <div>
-                            <p class="year"> ${new Date(movie.release_date).getFullYear()}</p>
-                            <p class="duration"> ${movie.runtime} min</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                  </div>
-              `;
+          <a href="../Movie/movie.html"><img src="${posterPath}" alt="${movie.title} poster"></a>
+          <div class="articleInfoMovie">
+            <div class="articleContainerMovie">
+              <div class="articleInfoMovie">
+                <div>
+                  <h3>${movie.title}</h3>
+                  <h3 class="score"><img src="../../assets/estrela.png"> ${movie.vote_average.toFixed(2)}</h3>
+                </div>
+                <div>
+                  <h4 class="year">${new Date(movie.release_date).getFullYear()}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const imageElement = movieElement.querySelector("img");
+        imageElement.addEventListener("click", function (event) {
+          event.preventDefault();
+          sessionStorage.setItem("movieID", movie.id);
+          sessionStorage.setItem("movieTitle", movie.title);
+          sessionStorage.setItem("moviePoster", posterPath);
+          window.location.href = "../Movie/movie.html";
+        });
+
         resultsDiv.appendChild(movieElement);
       });
     }
   }
+  highRatingButton.addEventListener("click", function () {
+    sortByRating = !sortByRating;
+    if (sortByRating) {
+      highRatingButton.classList.add("active");
+    } else {
+      highRatingButton.classList.remove("active");
+    }
+  });
 
   getGenres();
   mainForm.addEventListener("submit", searchMovies);
@@ -135,13 +157,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   checkAuth();
+  function clearFormFields() {
+    document.getElementById("genre").selectedIndex = 0;
+    document.getElementById("releaseYear").value = "";
+    document.getElementById("startYear").value = "";
+    document.getElementById("endYear").value = "";
+    document.getElementById("highRating").classList.remove("active");
+  }
+  
+  document.getElementById("clearButton").addEventListener("click", clearFormFields);
 
-  document
-    .getElementById("idlogoutButton")
-    .addEventListener("click", function () {
-      localStorage.removeItem("token");
-      localStorage.removeItem("username");
+  document.getElementById("idlogoutButton").addEventListener("click", function () {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
 
-      window.location.href = "../../index.html";
-    });
+    window.location.href = "../../index.html";
+  });
 });

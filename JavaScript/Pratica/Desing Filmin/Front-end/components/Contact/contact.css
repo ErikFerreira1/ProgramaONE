@@ -175,8 +175,11 @@ body {
     padding-left: 10px;
     padding-right: 3px;
   }
-  .hidden-label {
-    padding-left: 10px;
+
+  #mainSearchForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   #genre {
     height: 30px;
@@ -184,6 +187,21 @@ body {
     border-radius: 15px;
     font-size: 16px;
     text-transform: uppercase;
+    text-align: start;
+    font-weight: bold;
+    background-color: transparent;
+    color:  #fff;
+    border: 1px solid #e3d703;
+    cursor: pointer;
+  }
+  #genre > option{
+    font-weight: bold;
+    background-color: #151c24;
+    color:  #fff;
+    border: 2px solid #e3d703;
+  }
+  #genre:hover{
+    border: 1px solid white;
   }
   #releaseYear {
     height: 28px;
@@ -191,6 +209,45 @@ body {
     border-radius: 15px;
     font-size: 16px;
     text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color:  #fff;
+    border: 1px solid #e3d703;
+   
+  }
+  #releaseYear:hover, #startYear:hover, #endYear:hover{
+    border: 1px solid white;
+  }
+  #startYear, #endYear {
+    height: 28px;
+    width: 120px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color:  #fff;
+    border: 1px solid #e3d703;
+   
+  }
+
+  #Buscar, #clearButton {
+    height: 32px;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color:  #fff;
+    border: 1px solid #e3d703;
+    cursor: pointer;
+  }
+  #Buscar:hover, #clearButton:hover{
+    border: 1px solid white;
   }
   #results {
     display: flex;
@@ -198,10 +255,12 @@ body {
     flex-wrap: wrap;
     padding-top: 40px;
     gap: 40px;
+    color: white;
 
   }
-  .movie > img{
+  .movie > a > img{
     width: 303px;
+    height: 454.5px;
     border-radius: 6px;
     cursor: pointer;
   }
@@ -249,6 +308,28 @@ body {
     font-size: 15px;
     padding-left: 35px;
   }
+  #highRating.active {
+    border: 1px solid white; 
+   
+  }
+  
+  #highRating {
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #e3d703;
+    cursor: pointer;
+  }
+  #highRating:hover{
+    border: 1px solid white;
+  }
+ 
 
   
   @media screen {

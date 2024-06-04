@@ -188,13 +188,15 @@ main {
   margin: 100px 50px 0px 50px;
   border-radius: 5px;
 
+ 
+  user-select: none;
   width: 300px;
   height: 450px;
 }
 .titleMovie {
   margin-top: 100px;
   width: 31.5vw;
-  text-align: justify;
+  
   position: relative;
 
   color: white;

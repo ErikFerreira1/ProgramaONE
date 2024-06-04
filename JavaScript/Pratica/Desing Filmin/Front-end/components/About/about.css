@@ -260,7 +260,7 @@ footer {
 .footerSection {
   background-image: url(../../assets/footer_bg.jpg);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 
   padding: 2vh 20vw;
 }

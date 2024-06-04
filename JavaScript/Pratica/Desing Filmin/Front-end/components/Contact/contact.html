@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato</title>
+    <title>Encontre</title>
     <link rel="stylesheet" href="contact.css" />
     <link
       rel="stylesheet"
@@ -14,13 +14,15 @@
   <body>
     <nav>
       <div class="navLogo">
-        <a href="#"><img src="../../assets/logo.png" alt="logo" /></a>
+        <a href="../../index.html"
+          ><img src="../../assets/logo.png" alt="logo"
+        /></a>
       </div>
       <div>
         <ul class="navLinks">
           <li><a href="../../index.html">HOME</a></li>
-          <li><a href="../About/about.html">ABOUT</a></li>
-          <li><a href="../Contact/contact.html">CONTACT</a></li>
+          <li><a href="../About/about.html">SOBRE</a></li>
+          <li><a href="../Contact/contact.html">ENCONTRE</a></li>
         </ul>
       </div>
       <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
@@ -30,7 +32,11 @@
             ×
           </span>
           <div class="overlay-content">
-            <form id="navSearchForm" action="../Search/search.html" method="get">
+            <form
+              id="navSearchForm"
+              action="../Search/search.html"
+              method="get"
+            >
               <input
                 class="overlay-content-btn"
                 type="text"
@@ -69,9 +75,21 @@
         <select id="genre" name="genre">
           <option disabled selected hidden>Gênero</option>
         </select>
-      
-        <input type="number" id="releaseYear" name="releaseYear" placeholder="Ano" min="1900" max="2024">
+        <input
+          type="number"
+          id="releaseYear"
+          name="releaseYear"
+          placeholder="Ano de lançamento"
+          min="1900"
+          max="2026"
+        />
+        
+        <input type="number" id="startYear" name="startYear" min="1900" max="2026" placeholder="Ano inicial" />
+       
+        <input type="number" id="endYear" name="endYear" min="1900" max="2026" placeholder="Ano final" />
+        <button id="highRating" type="button">Maior Nota</button>
         <button id="Buscar" type="submit">Buscar</button>
+        <button id="clearButton" type="button">Limpar</button>
       </form>
       <div id="results"></div>
     </main>

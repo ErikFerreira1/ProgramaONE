@@ -226,6 +226,7 @@ main {
 }
 .articleContainerMovie > a > img {
   width: 303px;
+  height: 454.5px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -287,7 +288,7 @@ footer {
 .footerSection {
   background-image: url(assets/footer_bg.jpg);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 
   padding: 2vh 20vw;
 }
@@ -306,6 +307,12 @@ footer {
   font-weight: normal;
   color: #bcbcbc;
   font-size: 13px;
+}
+.footerLinksHelp {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 10px;
 }
 
 .socialMedia {
